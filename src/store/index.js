@@ -24,8 +24,8 @@ export default new Vuex.Store({
     CLEAR_MOVIE_LIST: (state) => state.movies = [],
     SET_MOVIES_COUNT: (state, value) => state.moviesCount = value,
     UPDATE_MOVIES: (state, movies) => state.movies = movies,
-    UPDATE_MOVIES_BY_ADD_MORE: (state, movies) =>
-      state.movies.length ? movies.forEach(el => state.movies.push(el)) : state.movies = movies,
+    // UPDATE_MOVIES_BY_ADD_MORE: (state, movies) =>
+    //   state.movies.length ? movies.forEach(el => state.movies.push(el)) : state.movies = movies,
     UPDATE_MOVIE_CARD: (state, movieDetail) => state.movieDetail = movieDetail,
     SET_SEARCH_KEY: (state, key) => state.searchKey = key,
     SET_MOVIE_PAGE: (state) => state.moviePage += 1,
@@ -46,7 +46,6 @@ export default new Vuex.Store({
         .get('', { params })
         .catch(err => console.log(err))
       commit('UPDATE_MOVIES', moviesResponse.data.Search)
-      commit('UPDATE_MOVIES_BY_ADD_MORE', moviesResponse.data.Search)
       commit('SET_MOVIES_COUNT', moviesResponse.data.totalResults)
       commit('UPDATE_MOVIE_CARD', moviesResponse.data)
     },
