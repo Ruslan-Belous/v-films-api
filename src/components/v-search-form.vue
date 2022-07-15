@@ -34,12 +34,13 @@ export default {
   },
   computed: {
     canSearch() {
+      // console.log('1', this.UPDATE_MOVIES())
       return this.searchKey.trim()
     },
   },
   methods: {
     ...mapActions(['getMovies']),
-    ...mapMutations(['SET_SEARCH_KEY', 'CLEAR_MOVIE_LIST']),
+    ...mapMutations(['SET_SEARCH_KEY', 'CLEAR_MOVIE_LIST', 'UPDATE_MOVIES']),
     async searchMovies() {
       if (this.searchKey) {
         this.CLEAR_MOVIE_LIST()

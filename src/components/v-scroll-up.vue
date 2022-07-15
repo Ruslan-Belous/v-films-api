@@ -18,7 +18,6 @@ export default {
     this.checkScrollPosition()
     window.addEventListener('scroll', this.checkScrollPosition)
   },
-
   methods: {
     checkScrollPosition() {
       this.isBtnUpShown = window.pageYOffset > 30

@@ -3,6 +3,7 @@
     <v-header />
     <main>
       <router-view />
+      <v-scroll-up />
     </main>
     <v-footer />
   </div>
@@ -11,8 +12,9 @@
 <script>
 import VFooter from './components/v-footer.vue'
 import vHeader from './components/v-header.vue'
+import VScrollUp from './components/v-scroll-up.vue'
 export default {
-  components: { vHeader, VFooter },
+  components: { vHeader, VFooter, VScrollUp },
 }
 </script>
 
@@ -49,9 +51,9 @@ button {
   --primary: #42b883;
   --secondary: #496583;
   font-family: 'Apis', sans-serif;
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
+  // width: 100vw;
+  // height: 100vh;
+  // overflow: auto;
 }
 main {
   flex: 1 1 auto;

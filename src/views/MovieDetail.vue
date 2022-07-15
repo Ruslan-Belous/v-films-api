@@ -126,12 +126,17 @@ export default {
     ...mapMutations(['SET_WISHLIST']),
     openPopupInfo() {
       this.isPopupIsnfoVisible = true
+      document.body.style.position = 'fixed'
+      document.body.style.overflow = 'hidden'
     },
     closeInfoPopup() {
       this.isPopupIsnfoVisible = false
+      document.body.style.position = ''
+      document.body.style.overflow = ''
     },
     addToWishList() {
       this.SET_WISHLIST(this.movieDetail)
+      localStorage.setItem('test', JSON.stringify(this.movieDetail))
       const addNotification = () => {
         // this.messages.unshift({
         //   id: this.movieDetail.Title,

@@ -33,8 +33,10 @@ export default {
 <style lang="scss" scoped>
 .wishlist {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 20px;
   &__logo {
     padding-right: 5px;
     width: 30px;

@@ -46,6 +46,16 @@ export default new Vuex.Store({
         .get('', { params })
         .catch(err => console.log(err))
       commit('UPDATE_MOVIES', moviesResponse.data.Search)
+      let array = moviesResponse.data.Search
+      // console.log('before', array);
+      // let keys = array.reduce((container, obj) => [...container, ...Object.keys(obj)], []);
+      // console.log('keys', keys);
+      // let uniqueKeys = [...new Set(keys)];
+      // console.log('UNIQkeys', uniqueKeys);
+      let result = array.map(x => x.Title)
+      console.log(result);
+
+
       commit('SET_MOVIES_COUNT', moviesResponse.data.totalResults)
       commit('UPDATE_MOVIE_CARD', moviesResponse.data)
     },
